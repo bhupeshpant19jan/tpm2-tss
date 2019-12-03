@@ -62,15 +62,24 @@ $ sudo dnf builddep tpm2-tss
 ```
 
 ## Windows
-Windows dlls built using the Clang/LLVM "Platform Toolset" are currently
-prototypes. We have only tested using Visual Studio 2017 with the Universal
-C Runtime (UCRT) version 10.0.16299.0. Building the type marshaling library
-(tss2-mu.dll) and the system API (tss2-sapi.dll) should be as simple as
-loading the tpm2-tss solution (tpm2-tss.sln) with a compatible and properly
-configured version of Visual Studio 2017 and pressing the 'build' button.
+Windows dlls built using the Clang/LLVM "Platform Toolset: Visual Studio 2017 
+- Clang with Microsoft CodeGen (v141_clang_c2)" are currently prototypes. We 
+have only tested using Visual Studio 2017 with the Universal C Runtime 
+(UCRT) version 10.0.16299.0. Building the type marshaling library (tss2-mu.dll) 
+and the system API (tss2-sapi.dll) should be as simple as loading the 
+tpm2-tss solution (tpm2-tss.sln) with a compatible and properly configured 
+version of Visual Studio 2017 and pressing the 'build' button.
+
+### Dependencies
+OpenSSL: (ver < less than 1.1.0)
+Reference: 
+https://stackoverflow.com/questions/46768071/openssl-linking-undefined-reference-evp-md-ctx-new-and-fre
+https://github.com/ethereumjs/ethereumjs-util/issues/43
 
 ### References
-Visual Studio 2017 with "Clang for Windows": https://blogs.msdn.microsoft.com/vcblog/2017/03/07/use-any-c-compiler-with-visual-studio/
+Visual Studio 2017 with "Clang for Windows": 
+* https://devblogs.microsoft.com/cppblog/clang-3-8-in-the-may-release-of-clang-with-microsoft-codegen/
+* https://devblogs.microsoft.com/cppblog/clang-llvm-support-in-visual-studio/
 Universal CRT overview & setup instructions: https://docs.microsoft.com/en-us/cpp/porting/upgrade-your-code-to-the-universal-crt
 
 # Building From Source
